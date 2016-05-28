@@ -1,0 +1,17 @@
+<ion-view view-title="상품샘플">
+  <ion-content class="has-footer">
+  	<div class="list">
+
+	  <div class="item item-button-right" ng-repeat="product in productlists">
+	    {{product.title}} ( {{product.amount|number}}원 ) <span ng-if="inCart(product.id) > 0" ng-bind-template="&#x2715; {{inCart(product.id)}}"></span>
+	    <button class="button button-stable" ng-click="addCart(product.id)">
+	      <i class="icon ion-ios-download-outline"></i>
+	    </button>
+	  </div>
+
+	</div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-balanced">
+  	<button class="button button-balanced button-block" style="margin:0;font-weight:bold" ng-disabled="total() == 0" ng-click="checkout()">{{total()|number}} 원 결제하기</button>
+  </ion-footer-bar>
+</ion-view>

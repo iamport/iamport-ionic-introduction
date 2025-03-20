@@ -89,7 +89,7 @@ angular.module('starter.controllers', ['ngCordovaIamport'])
       buyer_name : '아임포트',
       buyer_email : 'iamport@siot.do',
       buyer_tel : '010-8598-8832',
-      app_scheme : 'ioniciamport'
+      app_scheme : 'ioniciamport://'
     };
 
     $cordovaIamport.payment('imp57843720', param).then(function(result) {
